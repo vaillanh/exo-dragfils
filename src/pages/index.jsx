@@ -41,7 +41,13 @@ const Homepage = () => {
                 .map((value) => value.split(";"))
                 .map((value, i) => {
                   if (i === 0) {
-                    value.forEach((element) => <th key={element}>{element}</th>)
+                    value.forEach(
+                      (element) =>
+                        console.log(
+                          "th:",
+                          element
+                        ) /*<th key={element}>{element}</th>*/
+                    )
                   }
                 })}
             </tr>
@@ -51,10 +57,12 @@ const Homepage = () => {
               .map((value) => value.split(";"))
               .map((value, i) => {
                 if (i > 0) {
+                  console.log("tr:", i)
                   ;<tr>
-                    {value.forEach((element) => (
-                      <td key={element}>{element}</td>
-                    ))}
+                    {value.forEach(
+                      (element) => console.log("td:", element)
+                      /*<td key={element}>{element}</td>*/
+                    )}
                   </tr>
                 }
               })}
